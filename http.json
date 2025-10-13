@@ -1,0 +1,68 @@
+{
+  "type": "forwarded",
+  "data": {
+    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0NTY0NTYiLCJsb2dpbl91c2VyX2tleSI6Ijc1YmVmMTNjLTg2YzYtNGRiMC1iYjk5LTNjNjBhNjRmMjE4OSJ9._O_MM74c_REm0Wk7rc_nPPBWj2w600n0AJrDzlROTdfk6BovyJ02fdkNIUPn_SW1hF5epBqGzwhnO2RzWdbHZQ",
+    "username": "456456",
+    "userId": 112,
+    "userCode": "5a5cabe5997a47fb993b4332dc296f4a",
+    "最低任务佣金": "10",
+    "关联ID": {},
+    "是否启动自动化任务": true,
+    "用户属性": {
+      "年龄": "18-25",
+      "城市": "tier1-2",
+      "财富": "top5"
+    },
+    "权限设置": {
+      "无障碍开关": true,
+      "文件存储权限": true,
+      "位置权限": true
+    },
+    "userInfo": {
+      "msg": "操作成功",
+      "code": 200,
+      "permissions": [],
+      "roles": [],
+      "isDefaultModifyPwd": false,
+      "isPasswordExpired": false,
+      "user": {
+        "createBy": null,
+        "createTime": "2025-07-25 16:28:15",
+        "updateBy": null,
+        "updateTime": null,
+        "remark": null,
+        "params": {
+          "@type": "java.util.HashMap"
+        },
+        "userId": 112,
+        "deptId": null,
+        "userName": "456456",
+        "nickName": "456456",
+        "email": null,
+        "phonenumber": null,
+        "sex": "0",
+        "avatar": null,
+        "password": "$2a$10$1oIoLvSDBHp.hMpg0exMQ.BgcKnGrzhm00uLt1pDRkqS5OqbUBXfG",
+        "status": "0",
+        "delFlag": "0",
+        "loginIp": "117.141.11.113",
+        "loginDate": "2025-10-12T01:16:33.000+08:00",
+        "pwdUpdateDate": "2025-07-25T16:28:15.000+08:00",
+        "dept": null,
+        "roles": [],
+        "roleIds": null,
+        "postIds": null,
+        "roleId": null,
+        "parentUserId": 1,
+        "userCoin": "98501426",
+        "userCode": "5a5cabe5997a47fb993b4332dc296f4a",
+        "address": null,
+        "wxAccount": null,
+        "twitterNo": null,
+        "telegram": null,
+        "contactNumber": "0",
+        "admin": false
+      }
+    }
+  }
+}

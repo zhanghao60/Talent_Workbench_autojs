@@ -1,0 +1,44 @@
+{
+    "task_code": "2d0a50d4-1a8b-47ce-9194-490b9d1f7964",
+    "cost_trcoin": 20,
+    "script_id": 21,
+    "script_is_open": 1,
+    "script_url": "https://4inwork.oss-cn-shanghai.aliyuncs.com/scripts/595ef7d3-2668-40e9-a78f-dcd241fb87ad/a6c09f70-ed39-4b0f-ad0b-8bd7d78aa449.js",
+    "content": {
+        "id": 153,
+        "content_id": 35,
+        "text": "小红书评论",
+        "type": "评论",
+        "description": "哇！！！好漂亮",
+        "platform": "",
+        "link_url": "",
+        "params": {
+            "customParams": [
+                {
+                    "min": 3000
+                },
+                {
+                    "max": 5000
+                },
+                {
+                    "content": "哇！！！好漂亮"
+                }
+            ],
+            "image": [
+                {
+                    "url": "https://4inwork.oss-cn-shanghai.aliyuncs.com/contentCloud/aa527b92-352d-41be-81c9-c588d13b0296/a9356d48-2b9d-4d50-b6c6-ad258bc867ed_微信图片_20250621155557.jpg",
+                    "uid": 1752991363616,
+                    "status": "success"
+                }
+            ],
+            "mainImage": null,
+            "mainVideo": null,
+            "video": []
+        },
+        "status": 0
+    },
+    "relatedIds": 112,
+    "userId": 106,
+    "android_exe_status": 1,
+    "start_time": "2025-10-12 14:17:30"
+}
