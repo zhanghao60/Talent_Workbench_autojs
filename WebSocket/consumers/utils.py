@@ -21,14 +21,25 @@ class Utils:
         
         # 提取指定字段
         try:
+            # 检查 message 是否为字典类型
+            if not isinstance(message, dict):
+                print(f"错误：process_http_message 接收到的 message 不是字典类型，实际类型：{type(message)}")
+                print(f"message 内容：{message}")
+                return http_data
+            
             http_data['token'] = message.get('token', '')
             http_data['username'] = message.get('username', '')
             http_data['userId'] = message.get('userId', '')
             http_data['userCode'] = message.get('userCode', '')
             http_data['最低任务佣金'] = message.get('最低任务佣金', '')
             http_data['关联ID'] = message.get('关联ID', {})
+            
+            # 调试信息：打印提取的数据
+            print(f"成功提取 http_data：{http_data}")
         except Exception as e:
             print(f"处理HTTP消息时发生错误：{e}")
+            import traceback
+            traceback.print_exc()
         
         return http_data
 
@@ -54,8 +65,10 @@ class Utils:
             mq_data['relatedIds'] = data.get('relatedIds', '')
             mq_data['userId'] = data.get('userId', '')
             mq_data['android_exe_status'] = data.get('android_exe_status', '')
-            mq_data['start_time'] = data.get('start_time', '')
-            # mq_data['content'] = data.get('content', {})
+            mq_data['start_time'] = data.get('start_time', '') # 示例："start_time": "2025-10-14 13:10:20",
+            mq_data['end_time'] = data.get('end_time','') # 示例 "end_time": "2025-10-16 00:00:00"
+            mq_data['android_exe_status'] = data.get('android_exe_status','')
+            mq_data['content'] = data.get('content', {}) # 脚本参数
             return mq_data
         except Exception as e:
             print(f"读取JSON文件时发生错误：{e}")
@@ -105,6 +118,40 @@ class Utils:
             str: 格式化的时间戳字符串
         """
         return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    def is_current_time_in_range(self, start_time_str, end_time_str):
+        """
+        判断当前时间是否在指定时间范围内
+        
+        Args:
+            start_time_str: 开始时间字符串，格式："2025-10-14 13:10:20"
+            end_time_str: 结束时间字符串，格式："2025-10-16 00:00:00"
+        
+        Returns:
+            bool: 当前时间在范围内返回True，否则返回False
+        """
+        try:
+            # 获取当前时间
+            current_time = datetime.datetime.now()
+            
+            # 解析时间字符串
+            start_time = datetime.datetime.strptime(start_time_str, "%Y-%m-%d %H:%M:%S")
+            end_time = datetime.datetime.strptime(end_time_str, "%Y-%m-%d %H:%M:%S")
+            
+            # 判断当前时间是否在范围内
+            is_in_range = start_time <= current_time <= end_time
+            
+            print(f"时间判断结果:")
+            print(f"  当前时间: {current_time.strftime('%Y-%m-%d %H:%M:%S')}")
+            print(f"  开始时间: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
+            print(f"  结束时间: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
+            print(f"  是否在范围内: {is_in_range}")
+            
+            return is_in_range
+            
+        except Exception as e:
+            print(f"时间判断出错: {e}")
+            return False
 
 
 

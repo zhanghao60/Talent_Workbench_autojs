@@ -26,3 +26,13 @@ def forward_to_specific_websocket(request, client_id):
         return JsonResponse({'status': 'error', 'message': 'Client not found'})
     elif request.method == 'GET':
         return JsonResponse({'status': 'success', 'message': 'GET请求成功'})
+    elif request.method == 'OPTIONS':
+        # 处理CORS预检请求
+        response = JsonResponse({'status': 'success'})
+        response['Access-Control-Allow-Origin'] = '*'
+        response['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+        response['Access-Control-Allow-Headers'] = 'Content-Type'
+        return response
+    else:
+        # 处理其他HTTP方法
+        return JsonResponse({'status': 'error', 'message': f'Method {request.method} not allowed'}, status=405)

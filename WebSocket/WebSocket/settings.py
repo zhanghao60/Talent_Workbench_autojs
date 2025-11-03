@@ -16,19 +16,25 @@ ALLOWED_HOSTS = [
     'autojs.ljzzh.cn',
 ]
 
-# CORS设置1
+# CORS设置 - 允许所有域名（开发环境）
+# 注意：生产环境建议限制为特定域名以提高安全性
+CORS_ALLOW_ALL_ORIGINS = True  # 允许所有域名进行跨域请求
+
+# CORS设置 - 如果只允许特定域名，可以注释掉上面一行，使用下面的配置
+# CORS_ALLOWED_ORIGINS = [
+#     "https://autojs.ljzzh.cn",
+#     "http://localhost:8080",
+# ]
+
+# CSRF设置 - 允许所有域名（开发环境）
+# 注意：CSRF_TRUSTED_ORIGINS 不支持通配符，需要完整URL
+# 如果允许所有域名，可以在视图中使用 @csrf_exempt 装饰器
+# 这里保留一些常用的域名
 CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://localhost:8000',
-    '*',
+    'http://localhost:8080',
     "https://autojs.ljzzh.cn",
-    
-]
-
-# CORS设置2
-CORS_ALLOWED_ORIGINS = [
-    "https://autojs.ljzzh.cn",  # 你的前端域名
-    "http://localhost:8080",    # 本地开发环境（可选，方便调试）
 ]
 
 # 注册app
